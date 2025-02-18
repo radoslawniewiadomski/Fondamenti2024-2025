@@ -7,7 +7,13 @@ int main(){
     int** p2 = &p1;
 
     cout << p1 <<", "<< p2 << endl;
+
     cout << *p1 <<", "<< *p2 << endl;
+
+
+    cout <<  **p2;
+
+    **p2 = 5;
 
     cout <<  **p2;
 

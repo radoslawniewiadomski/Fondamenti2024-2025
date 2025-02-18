@@ -1,8 +1,7 @@
 #include <iostream>
 using namespace std;
-struct t
 //ATTENZIONE IL CODICE E SBAGLIATO
-
+struct t
 {
     int x;
     float y;
@@ -13,7 +12,9 @@ struct t
 int main()
 {
     int x = 10;
+
     t t1;
+
     int* px = &x; // puntatore a un intero
 
     t* pt1 = &t1; //puntatore a una struttura
