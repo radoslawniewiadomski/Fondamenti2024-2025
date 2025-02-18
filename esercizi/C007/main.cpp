@@ -1,44 +1,31 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
-struct Studente
-{
-    string nome;
-    int voto;
-};
+int main() {
+    // Dichiarazione di tre variabili per le lettere
+    char lettera1, lettera2, lettera3;
 
-int main()
-{
-    // Array di 5 studenti
-    Studente studenti[5] =
-    {
-        {"Mario", 75},
-        {"Luigi", 88},
-        {"Anna", 92},
-        {"Giulia", 80},
-        {"Giovanni", 70}
-    };
+    // Richiesta dell'input da parte dell'utente
+    cout << "Inserisci tre lettere: ";
+    cin >> lettera1 >> lettera2 >> lettera3;
 
-    // Riferimento al miglior voto
-    Studente& migliore = studenti[0];  // Inizializziamo con il primo studente
+    // Dichiarazione dei puntatori a char per ciascuna lettera
+    char* ptr1 = &lettera1;
+    char* ptr2 = &lettera2;
+    char* ptr3 = &lettera3;
 
-    // Trova lo studente con il voto più alto
-    for (int i = 1; i < 5; i++)
-    {
-        if (studenti[i].voto > migliore.voto)
-        {
-            migliore = studenti[i];
-        }
+    // Comparazione delle lettere usando i puntatori
+    char* min = ptr1; // Partiamo assumendo che ptr1 punti alla lettera più piccola
+
+    if (*ptr2 < *min) {
+        min = ptr2;
+    }
+    if (*ptr3 < *min) {
+        min = ptr3;
     }
 
-    // Incrementa il voto dello studente con il voto più alto
-    migliore.voto++;
-
-    // Stampa lo studente con il voto più alto dopo l'incremento
-    cout << "Lo studente con il voto piu' alto (dopo incremento) è: "
-         << migliore.nome << " con voto " << migliore.voto << endl;
-
+    // Stampa della lettera che viene prima nell'ordine alfabetico
+    cout << "La lettera che viene prima nell'ordine alfabetico è: " << *min << endl;
 
     return 0;
 }

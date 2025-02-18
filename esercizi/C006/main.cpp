@@ -1,25 +1,24 @@
 #include <iostream>
 using namespace std;
 
+
 int main() {
-    // Array di numeri interi
-    int numeri[5] = {15, 42, 7, 63, 22};
+    int a, b, c;
 
-    // Riferimento al numero massimo
-    int& max = numeri[0];
+    // Input dei tre numeri
+   cout << "Inserisci tre numeri: ";
+  cin >> a >> b >> c;
+ cout << a << b << c;
 
-    // Trova il numero più grande nell'array usando il riferimento
-    for (int i = 1; i < 5; i++) {
-        if (numeri[i] > max) {
-            max = numeri[i];
-        }
-    }
+    // Riferimento al massimo
+    int& max = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
 
-    // Aggiungi 1 al numero più grande
+    // Stampa del massimo valore
+    cout << "Il numero massimo è: " << max << endl;
+
     max++;
 
-    // Stampa il numero più grande dopo l'incremento
-    cout << "Il numero piu' grande (dopo incremento) è: " << max << endl;
+    cout << a << b << c;
 
     return 0;
 }
