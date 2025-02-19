@@ -7,7 +7,6 @@ using namespace std;
 
 // Definiamo il numero di squadre e il numero di partite per squadra
 const int NUM_SQUADRE = 8;
-const int PARTITE_PER_SQUADRA = NUM_SQUADRE - 1;
 
 // Funzione per calcolare i punti di una squadra
 int calcolaPunti(int risultati[][NUM_SQUADRE], int squadraIndex)
@@ -72,7 +71,7 @@ int main()
     }
 
     // Determiniamo la squadra vincente
-    int squadraVincenteIndex = 0; // Indice della squadra vincente, inizializzato alla prima
+    int squadraVincenteIndex = 0; // Indice della squadra vincente
     for (int i = 1; i < NUM_SQUADRE; ++i)
     {
         // Confrontiamo i punti delle squadre, se sono uguali consideriamo la differenza reti
@@ -93,7 +92,7 @@ int main()
     }
 
     // Stampa della squadra vincente
-    cout << "La squadra vincente è: " << squadre[squadraVincenteIndex] << endl;
+    cout << "La squadra vincente e: " << squadre[squadraVincenteIndex] << endl;
 
     return 0;
 }
