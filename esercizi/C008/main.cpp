@@ -29,9 +29,10 @@ int calcolaPunti(int risultati[][NUM_SQUADRE], int squadraIndex)
 
 int main()
 {
-    // Array di nomi delle squadre
-    const char* squadre[NUM_SQUADRE] = {"Squadra 1", "Squadra 2", "Squadra 3", "Squadra 4", "Squadra 5", "Squadra 6", "Squadra 7", "Squadra 8"};
-
+ const char squadre[NUM_SQUADRE][10] = {
+    "Squadra 1", "Squadra 2", "Squadra 3", "Squadra 4",
+    "Squadra 5", "Squadra 6", "Squadra 7", "Squadra 8"
+};
     // Matrice dei risultati delle partite (inizializzata a 0)
     int risultati[NUM_SQUADRE][NUM_SQUADRE] = {{0}};
 
@@ -50,6 +51,7 @@ int main()
             cout << squadre[i] << " vs " << squadre[j] << " : " << risultati[i][j] << " : " << risultati[j][i] << endl;
         }
     }
+
 
     // Array per memorizzare i punti, le reti fatte e le reti subite di ogni squadra
     int punti[NUM_SQUADRE] = {0};
