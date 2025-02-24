@@ -5,6 +5,7 @@ int main()
 {
     int a =4;
     int b =8;
+
     int* pa=&a;
     //int* pb =&b;
 
@@ -12,7 +13,9 @@ int main()
     //cout<<pb<<endl;
 
     cout<<*pa<<endl; //stampa 4 sul terminale
-    pa++;
+
+    pa--;
+
     cout<<*pa<<endl; //cosa viene stampato? Perche?
 
     cout<<&a<<endl;

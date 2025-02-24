@@ -15,24 +15,26 @@ int main()
     p[1] =&b;
     p[2] =&c;
 
+/*
 
     //cambiare tree valori
     for (int i=0; i < 3; i++)
     {
-        (*p[i])++;
+        ( *p[i]        )++;
     }
 
-    /*
+*/
+
      //errore
      for (int i=0;i < 3; i++){
          *p[i]++;
      }
-    */
+
 
     //STAMPARE  3 VALORI
     for (int i=0; i < 3; i++)
     {
-        cout<<*p[i]<<", ";
+        cout<< *p[i]  <<", ";
     }
 
     cout <<endl;
@@ -40,7 +42,7 @@ int main()
     //stampare 3 indirizzi
     for (int i=0; i < 3; i++)
     {
-        cout<<p[i]<<", ";
+        cout<< p[i] <<", ";
     }
 
 }

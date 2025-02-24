@@ -5,6 +5,7 @@ using namespace std;
 	char s[32];
 	cin >> s;
 	char* p = s;
+
 	while (*p != '\0') {
 		if (*p >= 'A' && *p <= 'Z')
 			*p = *p - 'A' + 'a';
