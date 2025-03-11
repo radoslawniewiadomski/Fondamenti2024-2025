@@ -38,6 +38,6 @@ int main()
     // Array di puntatori a funzione
     void (*funzioni[3])(int[], int) = {leggi_vettore, stampa_vettore, somma_vettore};
 
-    for (int i = 0; i < 3; ++i)  (*funzioni[i ])(vettore, DIMENSIONE);
+    for (int i = 0; i < 3; ++i)  (*funzioni[i])(vettore, DIMENSIONE);
     return 0;
 }

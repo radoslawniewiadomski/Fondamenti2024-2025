@@ -16,6 +16,9 @@ float prodotto_scalare(const float *px, const float *py, int n) {
     return risultato;
 }
 
+
+
+
 int main() {
     const int dimensione = 5; // Dimensione comune dei due array
 

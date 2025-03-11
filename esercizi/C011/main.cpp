@@ -27,10 +27,10 @@ int main()
 
     *j = '\0'; // Aggiunge il terminatore di stringa alla copia
 
-    cout << st2;
+    cout << st2 ;
 }
 
-}
+
 
 
 
