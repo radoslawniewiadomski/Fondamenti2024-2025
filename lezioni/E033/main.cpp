@@ -20,8 +20,12 @@ int main()
     cin >> film1.durata;
     cout << "Inserisci anno di produzione: ";
     cin >> film1.anno;
+
+
     p=&film1;
 
     cout << "Titolo: " << p->titolo << endl;
+    cout << "Durata: " << p->durata << endl;
+    cout << "Anno: " << p->anno << endl;
     return 0;
 }

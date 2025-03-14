@@ -20,6 +20,7 @@ double calcolaArea(double (*funzioneArea)(double, double, double), double a, dou
 }
 
 int main() {
+
     double lato = 4.0;
     double base = 5.0, altezza = 3.0;
     double base1 = 6.0, base2 = 4.0, h = 2.0;

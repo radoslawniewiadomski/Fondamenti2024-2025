@@ -9,7 +9,6 @@ struct film
     int anno;
 };
 
-
 int main()
 {
     film* elencoFilm[3];

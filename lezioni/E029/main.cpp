@@ -10,6 +10,7 @@ double media (int a, int b)
 int main()
 {
     double (*pf)(int, int);
+
     pf = media;	// inizializzazione
 
     int x, y;
@@ -17,6 +18,7 @@ int main()
     cin >> x >> y;
 
     double m = (*pf)(x, y); // chiamata
+
     cout << "Media = " << m << endl;
     return 0;
 }

@@ -5,6 +5,7 @@ using namespace std;
 double somma(double x, double y){
   return x+y;
 }
+
 double differenza(double x, double y){
   return x-y;
 }
@@ -12,6 +13,7 @@ double differenza(double x, double y){
 int main()
 {
     double (*pf) (double, double);
+
     pf = somma;
 
     double a,b;

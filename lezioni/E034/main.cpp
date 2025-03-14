@@ -33,9 +33,11 @@ int main()
         cin >> durata;
         cout << "Inserisci anno: ";
         cin >> anno;
+
         elencoFilm[i].id = i + 1;
         elencoFilm[i].durata = durata;
         elencoFilm[i].anno = anno;
+
         strcpy(elencoFilm[i].titolo, titolo);
     }
 
