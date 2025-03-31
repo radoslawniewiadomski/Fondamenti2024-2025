@@ -33,7 +33,7 @@ int main()
     BubbleSort(imp, 2);  	// ERRORE!   L’operatore > non è definito per le strutture!
 
     for (int i=0; i<2; i++)
-        cout<<a[i]<<", ";
+         cout<<a[i]<<", ";
 
     return 0;
 

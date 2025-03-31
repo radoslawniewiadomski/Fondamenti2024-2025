@@ -2,7 +2,7 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="E76" />
+		<Option title="E076" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>

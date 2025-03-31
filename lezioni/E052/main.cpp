@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// corrisponde a: double f2(double x, double y)
 template <typename W, typename S>
 S f2 (W x, S y)
 {
@@ -14,5 +15,6 @@ int main()
     double d2=4.1;
 
     cout << f2(d1,d2) << endl;
+
     return 0;
 }

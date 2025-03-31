@@ -10,12 +10,28 @@ public:
     void riscala(double f);
 };
 
-int main()
+void Punto::riscala(double f)
 {
-    Punto p;
-    p._x = 100;	// OK
-    p._y = 200;	// OK
-    p.riscala(2.0);	// OK
-    p.test(3);		// ERRORE! test è membro privato!
-    return 0;
+
+    _x*=f;
+
+
 }
+
+void Punto::test(int n)
+{
+    {
+        if (n > _x) && (n > _y)
+            cout << "Corretto!";
+    }
+
+    int main()
+    {
+        Punto p;
+        p._x = 100;	// OK
+        p._y = 200;	// OK
+        p.riscala(2.0);	// OK
+        p.test(3);		// ERRORE! test è membro privato!
+        cout << p._x;
+        return 0;
+    }

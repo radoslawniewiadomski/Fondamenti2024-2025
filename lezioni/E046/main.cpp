@@ -1,9 +1,7 @@
 #include <iostream>
 using namespace std;
 
-#include <iostream>
-using namespace std;
-
+// ?? f2(int x)  S - non è possibile di dedurre il tipo specifico per il tipo generico S
 template <typename W, typename S>
 S f2 (W x)
 {

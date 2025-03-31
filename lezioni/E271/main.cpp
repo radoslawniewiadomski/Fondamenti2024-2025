@@ -8,7 +8,6 @@ public:
     char _titolo [20];
     int _durata;
     int _anno;
-
     void stampaFilm();
 };
 
@@ -28,6 +27,7 @@ int main()
     cin >> p._durata;
     cout << "Inserisci anno: ";
     cin >> p._anno;
+
     p.stampaFilm();
     return 0;
 }
