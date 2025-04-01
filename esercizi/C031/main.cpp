@@ -8,7 +8,8 @@ int* append(int* pa, int na, int* pb, int nb) {
 
     // Copia degli elementi di pa nell'array result
     for (int i = 0; i < na; i++) {
-        result[i] = pa[i];
+        //result[i] = pa[i];
+           *(result+i) = *(pa+i);
     }
 
     // Copia degli elementi di pb nell'array result
@@ -54,6 +55,7 @@ int main() {
         cout << concatenato[i] << " ";
     }
     cout << endl;
+
 
     // Deallocazione della memoria
     delete[] pa;
