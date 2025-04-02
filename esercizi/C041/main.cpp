@@ -3,20 +3,27 @@
 using namespace std;
 
 template <typename T>
-int contaDistinti(T a[], int n)
-{
-    int c = 1;
-    int i, j;
-    for (i = 1; i < n; i++)
-    {
-        for (j = 0; j < i; j++)
-            if (a[j] == a[i])
+int contaDistinti(T a[], int n) {
+    int count = 0;
+
+    for (int i = 0; i < n; i++) {
+        bool isDistinct = true;
+
+        for (int j = 0; j < i; j++) {
+            if (a[i] == a[j]) {
+                isDistinct = false;
                 break;
-        if (i == j)
-            c++;
+            }
+        }
+
+        if (isDistinct) {
+            count++;
+        }
     }
-    return c;
+
+    return count;
 }
+
 
 int main()
 {
