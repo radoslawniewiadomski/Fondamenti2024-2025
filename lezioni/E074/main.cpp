@@ -15,13 +15,16 @@ void Punto::riscala(double f)
     _y *= f;
 }
 
+
 int main()
 {
     Punto p;
+
     Punto * pp = &p;
     pp->_x = 100;
     pp->_y = 200;
     pp->riscala(0.5);
     cout<<pp->_x;
+
     return 0;
 }

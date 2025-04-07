@@ -40,10 +40,11 @@ int main()
 
     Punto p2(10, 20);
     // costruttore con parametri
-    // x e 10, y e 20
+    // x  di p2 e 10, y  di p2 e 20
 
     Punto p3(p2);
     // costruttore di copia
-    // x e 10, y e 20
+    // x di p3 è 10, y di p3 è 20
+
     return 0;
 }

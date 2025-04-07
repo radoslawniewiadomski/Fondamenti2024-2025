@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-//Attenzione!! QUESTO codice contiene un errore
+//Questo è la correzione dell'errore in codice E075
+
 class Punto {
     public:
  	double _x;
@@ -17,11 +18,10 @@ void Punto::riscala(double f)
 
 int main()
 {
-     Punto *pp; //ERRORE!!! manca allocazione di memoria!!!
+     Punto *pp = new Punto (); //alloco la memoria per un oggetto di tipo Punto
      pp->_x = 100;
      pp->_y = 200;
      pp->riscala(0.5);
      cout<<pp->_x;
-
      return 0;
 }
