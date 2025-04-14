@@ -12,7 +12,7 @@ public:
     Punto();
     Punto(double x, double y);
 
-    // destruttore
+    // distruttore
     ~Punto();
 
     // modificatori
@@ -35,7 +35,7 @@ Punto::Punto()
     _y = -1;
 }
 
-//destruttore che non fa niente
+//distruttore didatico
 Punto::~Punto()
 {
     cout << "Sono distruttore" << endl;

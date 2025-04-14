@@ -1,14 +1,15 @@
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <cstring>
 
 using namespace std;
 
-class Studente {
-    string nome;
-    string cognome;
+class Studente
+{
+    char* nome;
+    char* cognome;
     int voto;
-    ifstream* file; // Puntatore a oggetto ifstream per il file
+    ifstream* file;
 
 public:
     // Costruttore con file
@@ -20,52 +21,68 @@ public:
 };
 
 // Implementazione del costruttore con file
-Studente::Studente(ifstream& file) : file(&file) {
-    if (file.is_open()) {
-        // Leggiamo i dati dal file e li assegniamo agli attributi della classe
-        getline(file, nome);
-        getline(file, cognome);
-        file >> voto;
-        file.ignore(); // Ignoriamo il carattere di nuova linea residuo
+Studente::Studente(ifstream& file) : file(&file)
+{
+    if (file.is_open())
+    {
+        char buffer[256];  // Buffer temporaneo per leggere da file
 
-        // Stampa messaggio di errore se la lettura del voto fallisce
-        if (file.fail()) {
+        // Lettura del nome
+        file.getline(buffer, 256);
+        nome = new char[strlen(buffer) + 1];
+        strcpy(nome, buffer);
+
+        // Lettura del cognome
+        file.getline(buffer, 256);
+        cognome = new char[strlen(buffer) + 1];
+        strcpy(cognome, buffer);
+
+        // Lettura del voto
+        file >> voto;
+        file.ignore(); // Ignora il newline residuo
+
+        if (file.fail())
+        {
             cerr << "Errore nella lettura del voto." << endl;
         }
-    } else {
+    }
+    else
+    {
         cerr << "Impossibile aprire il file." << endl;
     }
 }
 
-// Implementazione del distruttore
-Studente::~Studente() {
-    // Chiudiamo l'accesso al file nel distruttore
-    file->close();
+// Distruttore
+Studente::~Studente()
+{
     cout << "Distruttore chiamato per lo studente " << nome << " " << cognome << endl;
+    delete[] nome;
+    delete[] cognome;
+    file->close();
 }
 
-// Implementazione del metodo per stampare i dati dello studente
-void Studente::stampaDati() const {
+// Metodo per stampare i dati dello studente
+void Studente::stampaDati() const
+{
     cout << "Nome: " << nome << endl;
     cout << "Cognome: " << cognome << endl;
     cout << "Voto: " << voto << endl;
 }
 
-int main() {
-    // Apriamo il file per la lettura
+int main()
+{
     ifstream inputFile("d:\\studenti.txt");
 
-    // Verifichiamo se il file è stato aperto correttamente
-    if (!inputFile.is_open()) {
+    if (!inputFile.is_open())
+    {
         cerr << "Impossibile aprire il file." << endl;
         return 1;
     }
 
-    // Creiamo un oggetto Studente utilizzando il costruttore con file
-    Studente studente (inputFile);
+    Studente studente(inputFile);
 
-    // Stampiamo i dati dello studente
     studente.stampaDati();
 
     return 0;
 }
+

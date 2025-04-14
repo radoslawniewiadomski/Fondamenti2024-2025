@@ -70,10 +70,10 @@ Punto::~Punto()
 int main()
 {
     Punto* p2 = new Punto(10, 20);
-    cout << "Coordinate: (" << p2->getX() << ", " << p2->getX() << ")" << endl;
+    cout << "Coordinate: (" << p2->getX() << ", " << p2->getY() << ")" << endl;
 
     p2->setX(30);
-    cout << "Coordinate: (" << p2->getX() << ", " << p2->getX() << ")" << endl;
+    cout << "Coordinate: (" << p2->getX() << ", " << p2->getY() << ")" << endl;
 
     delete p2;
     return 0;

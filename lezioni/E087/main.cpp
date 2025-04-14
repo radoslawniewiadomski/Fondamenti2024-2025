@@ -20,8 +20,10 @@ public:
     // Selettori e modificatori
     char* getTitolo() const;
     void setTitolo(const char* titolo);
+
     int getDurata() const;
     void setDurata(int durata);
+
     int getAnno() const;
     void setAnno(int anno);
 

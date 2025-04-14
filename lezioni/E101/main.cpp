@@ -4,9 +4,9 @@
 using namespace std;
 
 class Libro {
-    char* autore;
-    char* titolo;
-    int anno;
+    char* _autore;
+    char* _titolo;
+    int _anno;
 
 public:
     // Costruttori
@@ -24,9 +24,9 @@ public:
 };
 
 class Libreria {
-    int id;
-    Libro* libri;
-    int numLibri;
+    int _id;
+    Libro* _libri;
+    int _numLibri;
 
 public:
     // Costruttore
@@ -40,72 +40,72 @@ public:
 };
 
 // Definizioni dei metodi della classe Libro
-Libro::Libro() : autore(nullptr), titolo(nullptr), anno(0) {}
+Libro::Libro() : _autore(nullptr), _titolo(nullptr), _anno(0) {}
 
-Libro::Libro(const char* autore, const char* titolo, int anno) : anno(anno) {
-    this->autore = new char[strlen(autore) + 1];
-    strcpy(this->autore, autore);
-    this->titolo = new char[strlen(titolo) + 1];
-    strcpy(this->titolo, titolo);
+Libro::Libro(const char* autore, const char* titolo, int anno) : _anno(anno) {
+    _autore = new char[strlen(autore) + 1];
+    strcpy(_autore, autore);
+    _titolo = new char[strlen(titolo) + 1];
+    strcpy(_titolo, titolo);
 }
 
 Libro::~Libro() {
-    delete[] autore;
-    delete[] titolo;
+    delete[] _autore;
+    delete[] _titolo;
 }
 
 const char* Libro::getAutore() const {
-    return autore;
+    return _autore;
 }
 
 void Libro::setAutore(const char* autore) {
-    delete[] this->autore;
-    this->autore = new char[strlen(autore) + 1];
-    strcpy(this->autore, autore);
+    delete[] _autore;
+    _autore = new char[strlen(autore) + 1];
+    strcpy(_autore, autore);
 }
 
 const char* Libro::getTitolo() const {
-    return titolo;
+    return _titolo;
 }
 
 void Libro::setTitolo(const char* titolo) {
-    delete[] this->titolo;
-    this->titolo = new char[strlen(titolo) + 1];
-    strcpy(this->titolo, titolo);
+    delete[] _titolo;
+    _titolo = new char[strlen(titolo) + 1];
+    strcpy(_titolo, titolo);
 }
 
 int Libro::getAnno() const {
-    return anno;
+    return _anno;
 }
 
 void Libro::setAnno(int anno) {
-    this->anno = anno;
+    _anno = anno;
 }
 
 // Definizioni dei metodi della classe Libreria
-Libreria::Libreria(int id) : id(id), libri(nullptr), numLibri(0) {}
+Libreria::Libreria(int id) : _id(id), _libri(nullptr), _numLibri(0) {}
 
 Libreria::~Libreria() {
-    for (int i = 0; i < numLibri; ++i) {
-        delete[] libri[i].getAutore();
-        delete[] libri[i].getTitolo();
+    for (int i = 0; i < _numLibri; ++i) {
+        delete[] _libri[i].getAutore();
+        delete[] _libri[i].getTitolo();
     }
-    delete[] libri;
+    delete[] _libri;
 }
 
 void Libreria::inserisciLibro(const Libro& libro) {
-    Libro* temp = new Libro[numLibri + 1];
-    for (int i = 0; i < numLibri; ++i) {
-        temp[i] = libri[i];
+    Libro* temp = new Libro[_numLibri + 1];
+    for (int i = 0; i < _numLibri; ++i) {
+        temp[i] = _libri[i];
     }
-    temp[numLibri] = libro;
-    delete[] libri;
-    libri = temp;
-    numLibri++;
+    temp[_numLibri] = libro;
+    delete[] _libri;
+    _libri = temp;
+    _numLibri++;
 }
 
 int Libreria::getNumLibri() const {
-    return numLibri;
+    return _numLibri;
 }
 
 int main() {

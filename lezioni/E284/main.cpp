@@ -29,10 +29,10 @@ Punto::Punto(const Punto &p)  {
     strcpy(c, p.c);
 }
 
-// Destruttore
+// Distruttore
 Punto::~Punto() {
     delete[] c;  // Libero la memoria allocata per il nome
-    cout<<"\nuso di destruttore"<<endl;
+    cout<<"\nuso di distruttore"<<endl;
 
 }
 

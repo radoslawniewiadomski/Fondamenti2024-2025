@@ -3,7 +3,8 @@
 
 using namespace std;
 
-class Libro {
+class Libro
+{
     char* autore;
     char* titolo;
     int anno;
@@ -26,7 +27,8 @@ public:
 };
 
 // Definizioni delle funzioni di Libro
-Libro::Libro() {
+Libro::Libro()
+{
     autore = new char[1];
     strcpy(autore, "");
     titolo = new char[1];
@@ -34,7 +36,8 @@ Libro::Libro() {
     anno = 0;
 }
 
-Libro::Libro(const char* autore, const char* titolo, int anno) {
+Libro::Libro(const char* autore, const char* titolo, int anno)
+{
     this->autore = new char[strlen(autore) + 1];
     strcpy(this->autore, autore);
     this->titolo = new char[strlen(titolo) + 1];
@@ -42,7 +45,8 @@ Libro::Libro(const char* autore, const char* titolo, int anno) {
     this->anno = anno;
 }
 
-Libro::Libro(const Libro& otherLibro) {
+Libro::Libro(const Libro& otherLibro)
+{
     autore = new char[strlen(otherLibro.autore) + 1];
     strcpy(autore, otherLibro.autore);
     titolo = new char[strlen(otherLibro.titolo) + 1];
@@ -50,40 +54,48 @@ Libro::Libro(const Libro& otherLibro) {
     anno = otherLibro.anno;
 }
 
-Libro::~Libro() {
+Libro::~Libro()
+{
     delete[] autore;
     delete[] titolo;
 }
 
-const char* Libro::getAutore() const {
+const char* Libro::getAutore() const
+{
     return autore;
 }
 
-void Libro::setAutore(const char* autore) {
+void Libro::setAutore(const char* autore)
+{
     delete[] this->autore;
     this->autore = new char[strlen(autore) + 1];
     strcpy(this->autore, autore);
 }
 
-const char* Libro::getTitolo() const {
+const char* Libro::getTitolo() const
+{
     return titolo;
 }
 
-void Libro::setTitolo(const char* titolo) {
+void Libro::setTitolo(const char* titolo)
+{
     delete[] this->titolo;
     this->titolo = new char[strlen(titolo) + 1];
     strcpy(this->titolo, titolo);
 }
 
-int Libro::getAnno() const {
+int Libro::getAnno() const
+{
     return anno;
 }
 
-void Libro::setAnno(int anno) {
+void Libro::setAnno(int anno)
+{
     this->anno = anno;
 }
 
-class Libreria {
+class Libreria
+{
     int id;
     Libro* libri;
     int numLibri;
@@ -102,20 +114,24 @@ public:
 };
 
 // Definizioni delle funzioni di Libreria
-Libreria::Libreria(int id) {
+Libreria::Libreria(int id)
+{
     this->id = id;
     libri = nullptr;
     numLibri = 0;
 }
 
-Libreria::~Libreria() {
+Libreria::~Libreria()
+{
     delete[] libri;
 }
 
-void Libreria::inserisciLibro(const Libro& libro) {
+void Libreria::inserisciLibro(const Libro& libro)
+{
     Libro* temp = new Libro[numLibri + 1];
 
-    for (int i = 0; i < numLibri; ++i) {
+    for (int i = 0; i < numLibri; ++i)
+    {
         temp[i] = libri[i];
     }
 
@@ -126,19 +142,24 @@ void Libreria::inserisciLibro(const Libro& libro) {
     numLibri++;
 }
 
-int Libreria::getNumLibri() const {
+int Libreria::getNumLibri() const
+{
     return numLibri;
 }
 
-Libro* Libreria::trovaLibroPiuVecchio() const {
-    if (numLibri == 0) {
+Libro* Libreria::trovaLibroPiuVecchio() const
+{
+    if (numLibri == 0)
+    {
         return nullptr; // Se la libreria è vuota, restituisce nullptr
     }
 
     Libro* libroPiuVecchio = &libri[0]; // Supponiamo il primo libro come il più vecchio
 
-    for (int i = 1; i < numLibri; ++i) {
-        if (libri[i].getAnno() < libroPiuVecchio->getAnno()) {
+    for (int i = 1; i < numLibri; ++i)
+    {
+        if (libri[i].getAnno() < libroPiuVecchio->getAnno())
+        {
             libroPiuVecchio = &libri[i];
         }
     }
@@ -146,7 +167,8 @@ Libro* Libreria::trovaLibroPiuVecchio() const {
     return libroPiuVecchio;
 }
 
-int main() {
+int main()
+{
     int numLibri;
 
     cout << "Quanti libri contiene la libreria? ";
@@ -154,7 +176,8 @@ int main() {
 
     Libreria libreria(1); // Creiamo una libreria con ID 1
 
-    for (int i = 0; i < numLibri; ++i) {
+    for (int i = 0; i < numLibri; ++i)
+    {
         char autore[100];
         char titolo[100];
         int anno;
@@ -176,12 +199,15 @@ int main() {
 
     // Troviamo e stampiamo il libro più vecchio nella libreria
     const Libro* libroPiuVecchio = libreria.trovaLibroPiuVecchio();
-    if (libroPiuVecchio != nullptr) {
+    if (libroPiuVecchio != nullptr)
+    {
         cout << "Il libro piu vecchio nella libreria e:" << endl;
         cout << "Autore: " << libroPiuVecchio->getAutore() << endl;
         cout << "Titolo: " << libroPiuVecchio->getTitolo() << endl;
         cout << "Anno di stampa: " << libroPiuVecchio->getAnno() << endl;
-    } else {
+    }
+    else
+    {
         cout << "La libreria e vuota." << endl;
     }
 

@@ -7,11 +7,11 @@ public:
     double _x;
     double _y;
 
-    //Punto(double x, double y);
-    //Punto(const Punto& p);
+    Punto(double x, double y);
+    Punto(const Punto& p);
 };
 
-/*
+
 Punto::Punto(double x, double y)
 {
     _x = x;
@@ -24,7 +24,7 @@ Punto::Punto(const Punto& p)
     _y = p._y;
 }
 
-*/
+
 
 int main()
 {
