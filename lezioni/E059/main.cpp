@@ -6,7 +6,7 @@ using namespace std;
 void add1(int* a, int size)
 {
     int* stop = a + size;
-    for (; a<stop;)
+    for (  ; a<stop;    )
         (*a++)+=1;
 }
 

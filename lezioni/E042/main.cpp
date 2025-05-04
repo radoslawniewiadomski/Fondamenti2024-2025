@@ -11,8 +11,11 @@ int fatt(int n)
 
 int main()
 {
-    int a =4;
-    a= fatt(a);
+    int a = 6;
+
+    a = fatt(a);
+
     cout<<a;
+
     return 0;
 }

@@ -1,13 +1,16 @@
 #include <iostream>
 using namespace std;
 
-//funzione aggiunge 1 ad ogni elemento di un array
-void add1(int* a, int size)
-{
 
-    for (int* pi=a; pi<a+size; pi++)
-        (*pi)+=1;
+//funzione aggiunge 1 a ogni elemento di un array
+
+/*
+void add1(int a [], int size) {
+    for (int i=0; i<size; i++)
+        a[i] +=1;
 }
+
+*/
 
 /*
 void add1(int a [], int size)
@@ -16,6 +19,14 @@ void add1(int a [], int size)
         (*pi)+=1;
 }
 */
+
+
+void add1(int* a, int size)
+{
+
+    for (int* pi=a; pi<a+size; pi++)
+        (*pi)+=1;
+}
 
 
 int main()
@@ -27,5 +38,4 @@ int main()
     for (int i=0; i<5; i++)
         cout << s[i]<< ", ";
     return 0;
-
 }

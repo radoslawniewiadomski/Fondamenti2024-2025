@@ -1,0 +1,78 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+class Punto {
+    double _x;
+    double _y;
+
+public:
+    Punto();
+    Punto(double x, double y);
+    ~Punto();
+    void setX(double x);
+    void setY(double y);
+    double getX();
+    double getY();
+    void stampaPunto();
+};
+
+Punto::Punto() {
+    _x = -1;
+    _y = -1;
+}
+
+Punto::Punto(double x, double y) {
+    _x = x;
+    _y = y;
+}
+
+void Punto::setX(double x) {
+    _x = x;
+}
+
+void Punto::setY(double y) {
+    _y = y;
+}
+
+double Punto::getX() {
+    return _x;
+}
+
+double Punto::getY() {
+    return _y;
+}
+
+void Punto::stampaPunto() {
+    cout << "Coordinate del punto: (" << _x << ", " << _y << ")" << endl;
+}
+
+Punto::~Punto() {
+    cout << "Questo e' il distruttore" << endl;
+}
+
+//attenzione, qua viene creata una coppia del oggetto puntato da p2 ma non abbiamo scritto il costruttore di copia
+void sposta(Punto p, double radius){
+
+        double angle = 0;
+
+        double newX = p.getX() + radius * cos(angle);
+        double newY = p.getY() + radius * sin(angle);
+
+        //cout << newX<<endl;
+        //cout << newY<<endl;
+
+        p.setX(newX);
+        p.setY(newY);
+
+    }
+
+int main() {
+    Punto* p2 = new Punto(0, 0);
+
+    sposta(*p2,100);
+    p2->stampaPunto();
+
+    delete p2;
+    return 0;
+}
