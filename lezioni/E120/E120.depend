@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1716198537 source:d:\_____genova teaching\fondamenti_23-24_github do not compile\lezioni\e120\main.cpp
+	<iostream>
+	<cstring>
+

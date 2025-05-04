@@ -15,7 +15,6 @@ void Punto::riscala(double f)
     _y *= f;
 }
 
-
 int main()
 {
     Punto p;

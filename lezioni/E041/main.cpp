@@ -28,6 +28,7 @@ int main()
     cout << "Titolo: " << p->titolo << endl;
 
     delete [] p->titolo;
+
     delete p;
 
     return 0;

@@ -25,14 +25,17 @@ int main()
         cin >> elencoFilm[i]->anno;
         elencoFilm[i]->id = i + 1;
     }
+
     cout << "Titoli dei film: "<< endl;
     for (int i = 0; i < numFilm; ++i)
     {
         cout << "Film " << i + 1 << ": " << elencoFilm[i]->titolo << endl;
     }
+
     for (int i = 0; i < numFilm; ++i)
     {
         delete elencoFilm[i];
     }
+
     return 0;
 }

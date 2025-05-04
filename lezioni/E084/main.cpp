@@ -9,13 +9,16 @@ public:
     const double _y;
 };
 
+
 Punto::Punto() : _x(1.0), _y(1.0) {}  // Inizializzazione tramite lista di inizializzazione
 
 Punto::Punto(double x, double y) : _x(x), _y(y) {}  // Inizializzazione tramite lista di inizializzazione
 
 
+
+//QUESTO è un errore, non è possibile inizializzare atributi const nel corpo del costruttore
+
 /*
-QUESTO è un errore, non è possibile inizializzare atributi const nel corpo del costruttore
 Punto::Punto()
 {
     _x = 1.0;

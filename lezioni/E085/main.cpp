@@ -25,7 +25,7 @@ class TestB
 {
 public:
     TestB();
-    TestB(TestA p, int n);
+    TestB(TestA& p, int n);
 
 private:
     TestA _t;
@@ -38,7 +38,7 @@ TestB::TestB() : _t(), _c(0) // Costruttore predefinito
     cout<<"Test B created with c= "<<_c<<endl;
 }
 
-TestB::TestB(TestA p, int n)
+TestB::TestB(TestA& p, int n)
     : _t(p), _c(n)
 {
     cout<<"Test B created with c= "<<_c<<endl;
@@ -50,9 +50,9 @@ int main()
 
     TestA ta(25);
 
-    cout <<"TestB1"<<endl;
+    //cout <<"TestB1"<<endl;
 
-    TestB tb1;
+    //TestB tb1;
 
     cout <<"TestB2"<<endl;
     TestB tb2(ta, 8);
