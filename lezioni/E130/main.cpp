@@ -15,7 +15,7 @@ public:
     void stampa() const;
 
     //overloading dell'operatore << per la classe Person
-    //friend ostream& operator<<(ostream& os, const Person& p);
+    friend ostream& operator<<(ostream& os, const Person& p);
 
 };
 
@@ -55,7 +55,7 @@ public:
     ~Film();
 
     //overloading dell'operatore << per la classe Film
-    //friend ostream& operator<<(ostream& os, const Film& film);
+    friend ostream& operator<<(ostream& os, const Film& film);
 
 
     // Selettori e modificatori
@@ -141,7 +141,7 @@ void Film::stampaFilm() const
 
 ///////////////////////////////////////
 
-/*
+
 ostream& operator<<(ostream& os, const Film& film)
 {
     os << "Titolo: " << film._titolo << ", Durata: " << film._durata << " minuti, Anno: " << film._anno;
@@ -154,7 +154,7 @@ ostream& operator<<(ostream& os, const Person& p)
     os << "Name: " << p._nome << ", Cognome: " << p._cognome;
     return os;
 }
-*/
+
 
 
 ////////////////////////////////////////////////////
@@ -167,7 +167,7 @@ class Coppia
 
 public:
     Coppia(T p, U s) : primo(p), secondo(s) {}
-    //void stampaCoppia();
+    void stampaCoppia();
 };
 
 

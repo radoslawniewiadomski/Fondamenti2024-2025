@@ -15,7 +15,9 @@ public:
 };
 
 template<typename T, int n>
-Vettore<T,n>::Vettore(){
+Vettore<T,n>::Vettore() {
+    for (int i = 0; i < n; i++)
+        dati[i] = 0;
 }
 
 template<typename T, int n>
@@ -36,7 +38,10 @@ void Vettore<T,n>::stampa()
 int main()
 {
     srand(time(0));
+
     Vettore<double, 5> v1; // Vettore di 5 double
+    v1.stampa(); // Stampa il vettore di 5 double
+
     v1.inserisciCasuale(); // Inserimento casuale di numeri nel vettore
     v1.stampa(); // Stampa il vettore di 5 double
 

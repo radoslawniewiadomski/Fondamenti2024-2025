@@ -37,6 +37,8 @@ void Person::stampa() const
 }
 
 
+
+
 template<typename T, int n>
 class Vettore
 {

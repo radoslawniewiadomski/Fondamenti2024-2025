@@ -36,6 +36,9 @@ void Impiegato::stampa() const {
     cout << "Nome: " << _nome << ", Cognome: " << _cognome << endl;
 }
 
+
+/////////////////////////////////////////////////////////
+
 template<typename T>
 void BubbleSort (T v[], int n) {
 	int i, j;
@@ -48,6 +51,9 @@ void BubbleSort (T v[], int n) {
 				v[j+1] = tmp;
 	}
 }
+
+
+/////////////////////////////////////////////////////////
 
 
 int main() {
