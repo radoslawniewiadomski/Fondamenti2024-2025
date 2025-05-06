@@ -93,18 +93,18 @@ int main() {
 		return -1;
 	}
 
-	Retta<double>* p = new Retta<double>[n];
+	Retta<double>* R = new Retta<double>[n];
 	for (int i = 0; i < n; i++) {
-		p[i].inserisciDati();
+		R[i].inserisciDati();
 	}
 
 	double xq = 0.0, yq = 0.0;
 	cout << "Inserire coordinate: ";
 	cin >> xq >> yq;
 	for (int k = 0; k < n; k++)
-		cout << p[k].calcolaDistanza(xq, yq) << endl;
+		cout << R[k].calcolaDistanza(xq, yq) << endl;
 
-	delete[] p;
+	delete[] R;
 
 	return 0;
 }
