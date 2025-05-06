@@ -21,7 +21,7 @@ public:
 
     // Selettori
     int get_size() const;
-    const T get_value(int index) const;
+    T get_value(int index) const;
     const T* get_array() const;
 
     // Modificatori
@@ -128,7 +128,7 @@ int array<T>::get_size() const
 }
 
 template<typename T>
-const T array<T>::get_value(int index) const
+T array<T>::get_value(int index) const
 {
     if (index >= 0 && index < _dim - 1 && _pdata != NULL)
     {
